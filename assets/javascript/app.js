@@ -4,15 +4,15 @@ function renderButtons() {
 
     $("#button-holder").empty();
     $.each(topics, function(item, value) {
-        var a = $("<button>");
+        var btn = $("<button>");
         // Adding a class
-        a.addClass("topic");
+        btn.addClass("topic");
         // Adding a data-attribute with a value of the movie at index i
-        a.attr("data-topic", value);
+        btn.attr("data-topic", value);
         // Providing the button's text with a value of the movie at index i
-        a.text(value);
+        btn.text(value);
         // Adding the button to the HTML
-        $("#button-holder").append(a);
+        $("#button-holder").append(btn);
     })
     // Looping through the array of movies
 }
@@ -45,6 +45,7 @@ $(document).on("click", "button", function() {
     $.get(queryURL).then(function(response) {
         // Storing an array of results in the results variable
         var results = response.data;
+        console.log(response);
 
         // Looping over every result item
         for (var i = 0; i < results.length; i++) {
@@ -59,11 +60,15 @@ $(document).on("click", "button", function() {
             var p = $("<p>").text("Rating: " + rating);
 
             // Creating an image tag
-            var topicImage = $("<img>");
+            var topicImage = $("<img class='gif'>");
 
             // Giving the image tag an src attribute of a proprty pulled off the
             // result item
-            topicImage.attr("src", results[i].images.fixed_height.url);
+            topicImage.attr("src", results[i].images.fixed_width_still.url);
+            topicImage.attr("data-still", results[i].images.fixed_width_still.url);
+            topicImage.attr("data-animate", results[i].images.fixed_width.url);
+            topicImage.attr("data-state", "still");
+            topicImage.attr("alt", results[i].title);
 
             // Appending the paragraph and personImage we created to the "gifDiv" div we created
             gifDiv.append(p);
@@ -75,6 +80,21 @@ $(document).on("click", "button", function() {
         }
     });
 });
+
+$(document).on("click", ".gif", function() {
+      // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+      var state = $(this).attr("data-state");
+      // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+      // Then, set the image's data-state to animate
+      // Else set src to the data-still value
+      if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+      } else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+    });
 
 // Calling the renderButtons function at least once to display the initial list of movies
 renderButtons();
