@@ -15,21 +15,53 @@
 </head>
 
 <body>
-  <div id="button-holder">
-      <button data-topic="nerds">nerds</button>
-  </div>
-  <form id="topic-form">
-      <label for="topic-input">Add a new topic!</label>
-      <input type="text" id="topic-input"><br>
+<div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <header class="col-9 mx-auto mt-3 text-center">
+                    <h1>ARReSTeD DeVeLOPMeNT</h1>
+                    <h2>Gif Generator</h2>
+                </header>
+            </div>
+            <main>
+                <div class="middle">
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div id="button-holder">
+      
+                            </div>
+                        </div>
+                    </div>
 
-      <!-- Button triggers new movie to be added -->
-      <input id="add-topic" type="submit" value="Add a new topic!">
-    </form>
+                    <div class="row mt-2">
+                        <div class="col-12 text-center">
+                            <form id="topic-form">
+                                <label for="topic-input"></label>
+                                <input type="text" id="topic-input">
 
-  <div id="gif-holder">
-  </div>
+                                <!-- Button triggers new movie to be added -->
+                                <input id="add-topic" type="submit" value="Add another character">
+                            </form>
+                        </div>
+                    </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <div id="gif-holder">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+      </div>
+      <footer>
+            <p>&copy; <script type="text/javascript">
+                document.write(new Date().getFullYear());
+                </script> Xander Rapstine</p>
+      </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
