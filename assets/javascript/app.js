@@ -34,7 +34,7 @@ function renderButtons() {
 }
 
 // This function handles events where one button is clicked
-$("#add-topic").on("click", function(event) {
+$("#add-topic").on("click", function() {
     // event.preventDefault() prevents the form from trying to submit itself.
     // We're using a form so that the user can hit enter instead of clicking the button if they want
     event.preventDefault();
@@ -48,6 +48,22 @@ $("#add-topic").on("click", function(event) {
     // calling renderButtons which handles the processing of our movie array
     renderButtons();
     $("#topic-input").val("");
+});
+
+$("#clear-gifs").on("click", function() {
+    // event.preventDefault() prevents the form from trying to submit itself.
+    // We're using a form so that the user can hit enter instead of clicking the button if they want
+    event.preventDefault();
+
+    $("#gif-holder, #magic").empty();
+});
+
+$("#start-over").on("click", function() {
+    // event.preventDefault() prevents the form from trying to submit itself.
+    // We're using a form so that the user can hit enter instead of clicking the button if they want
+    event.preventDefault();
+
+    location.reload();
 });
 
 $(document).on("click", "button", function() {
@@ -68,6 +84,8 @@ $(document).on("click", "button", function() {
         // Looping over every result item
         for (var i = 0; i < results.length; i++) {
 
+            var gifDivHolder = $("<div class='item-holder'>");
+
             // Creating a div with the class "item"
             var gifDiv = $("<div class='item'>");
 
@@ -75,10 +93,11 @@ $(document).on("click", "button", function() {
             var rating = results[i].rating;
 
             // Creating a paragraph tag with the result item's rating
-            var p = $("<p>").text("Rating: " + rating.toUpperCase());
+            var p = $("<p class='item-text'>").text("Rating: " + rating.toUpperCase());
 
             // Creating an image tag
             var topicImage = $("<img class='gif'>");
+
 
             // Giving the image tag an src attribute of a proprty pulled off the
             // result item
@@ -89,13 +108,13 @@ $(document).on("click", "button", function() {
             topicImage.attr("alt", results[i].title);
 
             // Appending the paragraph and personImage we created to the "gifDiv" div we created
-            gifDiv.append(p);
             gifDiv.append(topicImage);
+            gifDivHolder.append(p).append(gifDiv);
 
             // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-            $("#gif-holder").prepend(gifDiv);
-
+            $("#gif-holder").prepend(gifDivHolder);
         }
+        $("#magic").text("Click on the gif to see the magic!");
     });
 });
 

@@ -64,7 +64,7 @@ main {
     animation-fill-mode: backwards;
 }
 
-.topic, #add-topic {
+.topic, #add-topic, #clear-gifs, #start-over {
     text-transform: capitalize;
     display: inline-block;
     text-align: center;
@@ -78,11 +78,12 @@ main {
     font-family: "blurmedium", sans-serif;
 }
 
-.topic:hover, #add-topic:hover {
+.topic:hover, #add-topic:hover, #clear-gifs:hover, #start-over:hover {
 	border: 5px solid white;
     color: #F57321;
     background-color: black;
     cursor: pointer;
+    transition: all .2s ease-in-out;
 }
 
 input {
@@ -94,7 +95,7 @@ input {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -106,11 +107,35 @@ input {
     align-items: center;
 }
 
+.item-holder {
+	text-align: center;
+	border: 5px solid transparent;
+	border-radius: 15px;
+}
+
+.item-holder:hover {
+	border: 5px solid black;
+	transition: all .2s ease-in-out;
+}
+
+.item {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	width: 50vw;
+	height: 50vw;
+	max-width: 275px;
+	max-height: 275px;
+	margin: 5px;
+}
+
 .gif {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	max-width: 250px;
 	max-height: 250px;
+	cursor: pointer;
 }
 
 /* FOOTER */
