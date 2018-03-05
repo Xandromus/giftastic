@@ -34,7 +34,7 @@ function renderButtons() {
 }
 
 // This function handles events where one button is clicked
-$("#add-topic").on("click", function() {
+$("#add-topic").on("click", function(event) {
     // event.preventDefault() prevents the form from trying to submit itself.
     // We're using a form so that the user can hit enter instead of clicking the button if they want
     event.preventDefault();
@@ -50,7 +50,7 @@ $("#add-topic").on("click", function() {
     $("#topic-input").val("");
 });
 
-$("#clear-gifs").on("click", function() {
+$("#clear-gifs").on("click", function(event) {
     // event.preventDefault() prevents the form from trying to submit itself.
     // We're using a form so that the user can hit enter instead of clicking the button if they want
     event.preventDefault();
