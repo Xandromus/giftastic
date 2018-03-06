@@ -114,7 +114,7 @@ $(document).on("click", "button", function() {
             // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
             $("#gif-holder").prepend(gifDivHolder);
         }
-        $("#magic").text("Click on the gif to see the magic!");
+        $("#magic").text("(click to start/stop gif)");
     });
 });
 

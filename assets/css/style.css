@@ -29,11 +29,21 @@ body {
     position: relative;
     background-color: #F57321;
     font-family: "blurmedium", sans-serif;
+    color: black;
 }
 
 h1 {
+	font-size: 5vw;
 	font-weight: bolder;
 	font-family: "Antique-Olive", sans-serif;
+	color
+}
+
+hr {
+	width: 100%;
+	height: 5px;
+	background-color: black;
+	border-top: none;
 }
 
 
@@ -60,9 +70,11 @@ main {
     position: relative;
     overflow: hidden;
     width: 100%;
-    animation: fadeIn 1.25s ease-in-out 0.5s;
-    animation-fill-mode: backwards;
 }
+
+#topic-input:focus::placeholder {
+	color: transparent;
+} 
 
 .topic, #add-topic, #clear-gifs, #start-over {
     text-transform: capitalize;
@@ -160,4 +172,144 @@ footer p {
     right: 0;
     font-size: 1.2em;
     margin-bottom: 0!important;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flipIt {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes flipBack {
+    from {
+        transform: rotateY(360deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+/* Reduced screen */
+
+@media screen and (max-width: 1250px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+    h3 {
+    	font-size: 1.3rem;
+    }
+    button, input {
+		font-size: .9rem;
+	}
+}
+
+
+/* Tablet portrait */
+
+@media screen and (max-width: 798px) {
+    h1 {
+        font-size: 2.5rem!important;
+    }
+    h2 {
+        font-size: 1.4rem!important;
+        line-height: 2rem;
+    }
+        h3 {
+    	font-size: 1.1rem;
+    }
+	button, input {
+		font-size: .8rem;
+	}
+	#button-holder {
+		justify-content: flex-start;
+	}
+	#topic-input, #add-topic {
+		display: block!important;
+		margin-left: auto!important;
+		margin-right: auto!important;
+	}
+	.topic, #add-topic, #clear-gifs, #start-over {
+		padding: 10px 10px;
+		border-radius: 12px;
+	}
+}
+
+
+/* Small tablets */
+
+@media screen and (max-width: 510px) {
+    h1 {
+        font-size: 2rem!important;
+    }
+    h2 {
+        font-size: 1.2rem!important;
+        line-height: 1.5rem;
+    }
+        h3 {
+    	font-size: 1rem;
+    }
+    	button, input {
+		font-size: .7rem;
+	}
+		.topic, #add-topic, #clear-gifs, #start-over {
+			margin-left: 1px;
+			margin-right: 1px;
+		padding: 8px 8px;
+		border-radius: 10px;
+	}
+	.item {
+		width: 100vw;
+		height: 100vw;
+		max-width: 150px;
+		max-height: 150px;
+	}
+
+	.gif {
+		max-width: 125px;
+		max-height: 125px;
+	}
+}
+
+
+/* Mobile phones */
+
+@media screen and (max-width: 385px) {
+    header img {
+        width: 50%;
+    }
+    h1 {
+        font-size: 1.5rem!important;
+    }
+    h2 {
+        font-size: .9rem!important;
+    }
+        h3 {
+    	font-size: .8rem;
+    }
+    	button, input {
+		font-size: .6rem;
+	}
+		.topic, #add-topic, #clear-gifs, #start-over {
+		padding: 5px 5px;
+		border-radius: 8px;
+	}
 }
