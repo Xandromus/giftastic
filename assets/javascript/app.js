@@ -4,6 +4,8 @@ if (!("ontouchstart" in document.documentElement)) {
 
 var topics = ["michael bluth", "george bluth", "lucille bluth", "gob bluth", "lindsay fünke", "buster bluth", "george michael bluth", "maeby fünke", "tobias fünke", "oscar bluth"];
 
+var theme = new Audio("assets/audio/adtheme.mp3");
+
 var currIndex = topics.length,
                     temporaryValue, randomIndex;
 
@@ -120,6 +122,10 @@ $(document).on("click", "button", function() {
         }
         $("#magic").text("(click to start/stop gif)");
     });
+});
+
+$(document).one("click", "button", function() {
+      theme.play();
 });
 
 $(document).on("click", ".gif", function() {
