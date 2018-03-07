@@ -76,6 +76,16 @@ main {
 	color: transparent;
 } 
 
+.topic {
+	width: 200px;
+	height: auto;
+}
+
+#add-topic, #clear-gifs, #start-over {
+	width: 200px;
+	height: auto;
+}
+
 .topic, #add-topic, #clear-gifs, #start-over {
     text-transform: capitalize;
     display: inline-block;
@@ -220,6 +230,8 @@ footer p {
     button, input {
 		font-size: .9rem;
 	}
+	#add-topic, #clear-gifs, #start-over {
+	width: 180px;
 }
 
 
@@ -239,10 +251,11 @@ footer p {
 	button, input {
 		font-size: .8rem;
 	}
-	#button-holder {
-		justify-content: flex-start;
+	.topic {
+		width: 175px;
 	}
-	#topic-input, #add-topic {
+	#topic-input, #add-topic, #clear-gifs, #start-over {
+		width: 70vw;
 		display: block!important;
 		margin-left: auto!important;
 		margin-right: auto!important;
@@ -270,9 +283,17 @@ footer p {
     	button, input {
 		font-size: .7rem;
 	}
-		.topic, #add-topic, #clear-gifs, #start-over {
-			margin-left: 1px;
-			margin-right: 1px;
+	.topic, #add-topic, #clear-gifs, #start-over {
+    border: 3px solid black;
+}
+
+.topic:hover, #add-topic:hover, #clear-gifs:hover, #start-over:hover {
+	border: 3px solid white;
+}
+	.topic {
+		width: 150px;
+	}
+	.topic, #add-topic, #clear-gifs, #start-over {
 		padding: 8px 8px;
 		border-radius: 10px;
 	}
@@ -308,8 +329,31 @@ footer p {
     	button, input {
 		font-size: .6rem;
 	}
+	.topic {
+		width: 125px;
+	}
 		.topic, #add-topic, #clear-gifs, #start-over {
 		padding: 5px 5px;
 		border-radius: 8px;
 	}
+	.item {
+		width: 100vw;
+		height: 100vw;
+		max-width: 125px;
+		max-height: 125px;
+	}
+
+	.gif {
+		max-width: 100px;
+		max-height: 100px;
+	}
 }
+
+@media screen and (max-width: 350px) {
+	button, input {
+		font-size: .5rem;
+	}
+	.topic {
+		width: 100px;
+	}
+	}

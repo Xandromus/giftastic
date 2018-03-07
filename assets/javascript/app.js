@@ -1,3 +1,7 @@
+if (!("ontouchstart" in document.documentElement)) {
+    document.documentElement.className += "no-touch";
+}
+
 var topics = ["michael bluth", "george bluth", "lucille bluth", "gob bluth", "lindsay fünke", "buster bluth", "george michael bluth", "maeby fünke", "tobias fünke", "oscar bluth"];
 
 var currIndex = topics.length,
