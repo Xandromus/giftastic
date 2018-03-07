@@ -72,6 +72,11 @@ main {
     width: 100%;
 }
 
+#topic-input {
+	border-radius: 5px;
+	padding: 5px;
+}
+
 #topic-input:focus::placeholder {
 	color: transparent;
 } 
