@@ -48,7 +48,7 @@ $("#add-topic").on("click", function(event) {
     // This line will grab the text from the input box
     var newTopic = $("#topic-input").val().trim().toLowerCase();
     // The movie from the textbox is then added to our array
-    if (newTopic != "") {
+    if ((newTopic !== "") && (topics.indexOf(newTopic) === -1)) {
         topics.push(newTopic);
     }
     // calling renderButtons which handles the processing of our movie array
