@@ -1,6 +1,10 @@
-if (!("ontouchstart" in document.documentElement)) {
-    document.documentElement.className += "no-touch";
-}
+(function() {
+
+        $(document).ready(function() {
+
+// if (!("ontouchstart" in document.documentElement)) {
+//     document.documentElement.className += "no-touch";
+// }
 
 var topics = ["michael bluth", "george bluth", "lucille bluth", "gob bluth", "lindsay fünke", "buster bluth", "george michael bluth", "maeby fünke", "tobias fünke", "oscar bluth"];
 
@@ -78,25 +82,31 @@ $(document).on("click", "button", function() {
     var topic = $(this).attr("data-topic");
 
     // Constructing a URL to search Giphy for the name of the person who said the quote
-    var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key=h960leoNLQpERdKx2nmsO7RgvQdUpjZ8&limit=10&rating=pg&q=" +
+    var queryURL = "https://api.giphy.com/v1/gifs/search?&api_key=h960leoNLQpERdKx2nmsO7RgvQdUpjZ8&limit=50&rating=pg&q=" +
         topic;
 
     // Performing our AJAX GET request
     $.get(queryURL).then(function(response) {
         // Storing an array of results in the results variable
         var results = response.data;
-        console.log(response);
+        var randomArray = [];
+        while (randomArray.length < 10) {
+            var random = (Math.floor(Math.random() * results.length));
+                if (randomArray.indexOf(random) === -1) {
+                    randomArray.push(random);
+                }
+        }
+        
 
         // Looping over every result item
-        for (var i = 0; i < results.length; i++) {
-
+        for (var i = 0; i < randomArray.length; i++) {
             var gifDivHolder = $("<div class='item-holder'>");
 
             // Creating a div with the class "item"
             var gifDiv = $("<div class='item'>");
 
             // Storing the result item's rating
-            var rating = results[i].rating;
+            var rating = results[random].rating;
 
             // Creating a paragraph tag with the result item's rating
             var p = $("<p class='item-text'>").text("Rating: " + rating.toUpperCase());
@@ -107,11 +117,11 @@ $(document).on("click", "button", function() {
 
             // Giving the image tag an src attribute of a proprty pulled off the
             // result item
-            topicImage.attr("src", results[i].images.original_still.url);
-            topicImage.attr("data-still", results[i].images.original_still.url);
-            topicImage.attr("data-animate", results[i].images.original.url);
+            topicImage.attr("src", results[randomArray[i]].images.original_still.url);
+            topicImage.attr("data-still", results[randomArray[i]].images.original_still.url);
+            topicImage.attr("data-animate", results[randomArray[i]].images.original.url);
             topicImage.attr("data-state", "still");
-            topicImage.attr("alt", results[i].title);
+            topicImage.attr("alt", results[randomArray[i]].title);
 
             // Appending the paragraph and personImage we created to the "gifDiv" div we created
             gifDiv.append(topicImage);
@@ -145,3 +155,6 @@ $(document).on("click", ".gif", function() {
 
 // Calling the renderButtons function at least once to display the initial list of movies
 renderButtons();
+
+});
+    })();
