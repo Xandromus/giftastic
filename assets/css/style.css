@@ -239,7 +239,7 @@ footer p {
 	#add-topic, #clear-gifs, #start-over {
 	width: 180px;
 }
-
+}
 
 /* Tablet portrait */
 
@@ -292,7 +292,6 @@ footer p {
 	.topic, #add-topic, #clear-gifs, #start-over {
     border: 3px solid black;
 }
-
 .topic:hover, #add-topic:hover, #clear-gifs:hover, #start-over:hover {
 	border: 3px solid white;
 }
