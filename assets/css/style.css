@@ -9,14 +9,16 @@
     font-family: 'blurmedium';
     src: url('../fonts/blur_medium.eot');
     src: url('../fonts/blur_medium.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/blur_medium.woff2') format('woff2'),
-         url('../fonts/blur_medium.woff') format('woff'),
-         url('../fonts/blur_medium.ttf') format('truetype'),
-         url('../fonts/blur_medium.svg#blurmedium') format('svg');
+    url('../fonts/blur_medium.woff2') format('woff2'),
+    url('../fonts/blur_medium.woff') format('woff'),
+    url('../fonts/blur_medium.ttf') format('truetype'),
+    url('../fonts/blur_medium.svg#blurmedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
+
+/* BASIC STYLES */
 
 html {
     max-height: 100%;
@@ -33,16 +35,16 @@ body {
 }
 
 h1 {
-	font-size: 5vw;
-	font-weight: bolder;
-	font-family: "Antique-Olive", sans-serif;
+    font-size: 5vw;
+    font-weight: bolder;
+    font-family: "Antique-Olive", sans-serif;
 }
 
 hr {
-	width: 100%;
-	height: 5px;
-	background-color: black;
-	border-top: none;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-top: none;
 }
 
 
@@ -54,6 +56,7 @@ hr {
     padding: 0 0 100px;
     position: relative;
 }
+
 
 /* MAIN SECTION */
 
@@ -71,26 +74,51 @@ main {
     width: 100%;
 }
 
+
+/* TOPIC BUTTONS */
+
+#button-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px;
+}
+
+.topic {
+    width: 200px;
+    height: auto;
+}
+
+
+/* NEW CHARACTER INPUT AND RESET STATES */
+
+input {
+    display: inline!important;
+    font-family: "blurmedium", sans-serif;
+}
+
 #topic-input {
-	border-radius: 5px;
-	padding: 5px;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 #topic-input:focus::placeholder {
-	color: transparent;
-} 
-
-.topic {
-	width: 200px;
-	height: auto;
+    color: transparent;
 }
 
-#add-topic, #clear-gifs, #start-over {
-	width: 200px;
-	height: auto;
+#add-topic,
+#clear-gifs,
+#start-over {
+    width: 200px;
+    height: auto;
 }
 
-.topic, #add-topic, #clear-gifs, #start-over {
+.topic,
+#add-topic,
+#clear-gifs,
+#start-over {
     text-transform: capitalize;
     display: inline-block;
     text-align: center;
@@ -104,27 +132,19 @@ main {
     font-family: "blurmedium", sans-serif;
 }
 
-.topic:hover, #add-topic:hover, #clear-gifs:hover, #start-over:hover {
-	border: 5px solid white;
+.topic:hover,
+#add-topic:hover,
+#clear-gifs:hover,
+#start-over:hover {
+    border: 5px solid white;
     color: #F57321;
     background-color: black;
     cursor: pointer;
     transition: all .2s ease-in-out;
 }
 
-input {
-	display: inline!important;
-	font-family: "blurmedium", sans-serif;
-}
 
-#button-holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 1140px;
-}
+/* GIF AREA */
 
 #gif-holder {
     display: flex;
@@ -136,35 +156,36 @@ input {
 }
 
 .item-holder {
-	text-align: center;
-	border: 5px solid transparent;
-	border-radius: 15px;
+    text-align: center;
+    border: 5px solid transparent;
+    border-radius: 15px;
 }
 
 .item-holder:hover {
-	border: 5px solid black;
-	transition: all .2s ease-in-out;
+    border: 5px solid black;
+    transition: all .2s ease-in-out;
 }
 
 .item {
-	display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-	width: 50vw;
-	height: 50vw;
-	max-width: 275px;
-	max-height: 275px;
-	margin: 5px;
+    width: 50vw;
+    height: 50vw;
+    max-width: 275px;
+    max-height: 275px;
+    margin: 5px;
 }
 
 .gif {
-	width: 100%;
-	height: auto;
-	max-width: 250px;
-	max-height: 250px;
-	cursor: pointer;
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    max-height: 250px;
+    cursor: pointer;
 }
+
 
 /* FOOTER */
 
@@ -190,36 +211,6 @@ footer p {
     margin-bottom: 0!important;
 }
 
-/* ANIMATIONS */
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes flipIt {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-@keyframes flipBack {
-    from {
-        transform: rotateY(360deg);
-    }
-    to {
-        transform: rotateY(0deg);
-    }
-}
-
-
 
 /* MEDIA QUERIES */
 
@@ -231,15 +222,19 @@ footer p {
         font-size: 1.6rem;
     }
     h3 {
-    	font-size: 1.3rem;
+        font-size: 1.3rem;
     }
-    button, input {
-		font-size: .9rem;
-	}
-	#add-topic, #clear-gifs, #start-over {
-	width: 180px;
+    button,
+    input {
+        font-size: .9rem;
+    }
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        width: 180px;
+    }
 }
-}
+
 
 /* Tablet portrait */
 
@@ -251,26 +246,34 @@ footer p {
         font-size: 1.4rem!important;
         line-height: 2rem;
     }
-        h3 {
-    	font-size: 1.1rem;
+    h3 {
+        font-size: 1.1rem;
     }
-	button, input {
-		font-size: .8rem;
-	}
-	.topic {
-		width: 175px;
-	}
-	#topic-input, #add-topic, #clear-gifs, #start-over {
-		width: 70vw;
-		display: block!important;
-		margin-left: auto!important;
-		margin-right: auto!important;
-	}
-	.topic, #add-topic, #clear-gifs, #start-over {
-		padding: 10px 10px;
-		border-radius: 12px;
-	}
+    button,
+    input {
+        font-size: .8rem;
+    }
+    .topic {
+        width: 175px;
+    }
+    #topic-input,
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        width: 70vw;
+        display: block!important;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+    .topic,
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        padding: 10px 10px;
+        border-radius: 12px;
+    }
 }
+
 
 
 /* Small tablets */
@@ -283,36 +286,45 @@ footer p {
         font-size: 1.2rem!important;
         line-height: 1.5rem;
     }
-        h3 {
-    	font-size: 1rem;
+    h3 {
+        font-size: 1rem;
     }
-    	button, input {
-		font-size: .7rem;
-	}
-	.topic, #add-topic, #clear-gifs, #start-over {
-    border: 3px solid black;
-}
-.topic:hover, #add-topic:hover, #clear-gifs:hover, #start-over:hover {
-	border: 3px solid white;
-}
-	.topic {
-		width: 150px;
-	}
-	.topic, #add-topic, #clear-gifs, #start-over {
-		padding: 8px 8px;
-		border-radius: 10px;
-	}
-	.item {
-		width: 100vw;
-		height: 100vw;
-		max-width: 150px;
-		max-height: 150px;
-	}
-
-	.gif {
-		max-width: 125px;
-		max-height: 125px;
-	}
+    button,
+    input {
+        font-size: .7rem;
+    }
+    .topic,
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        border: 3px solid black;
+    }
+    .topic:hover,
+    #add-topic:hover,
+    #clear-gifs:hover,
+    #start-over:hover {
+        border: 3px solid white;
+    }
+    .topic {
+        width: 150px;
+    }
+    .topic,
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        padding: 8px 8px;
+        border-radius: 10px;
+    }
+    .item {
+        width: 100vw;
+        height: 100vw;
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .gif {
+        max-width: 125px;
+        max-height: 125px;
+    }
 }
 
 
@@ -328,37 +340,45 @@ footer p {
     h2 {
         font-size: .9rem!important;
     }
-        h3 {
-    	font-size: .8rem;
+    h3 {
+        font-size: .8rem;
     }
-    	button, input {
-		font-size: .6rem;
-	}
-	.topic {
-		width: 125px;
-	}
-		.topic, #add-topic, #clear-gifs, #start-over {
-		padding: 5px 5px;
-		border-radius: 8px;
-	}
-	.item {
-		width: 100vw;
-		height: 100vw;
-		max-width: 125px;
-		max-height: 125px;
-	}
+    button,
+    input {
+        font-size: .6rem;
+    }
+    .topic {
+        width: 125px;
+    }
+    .topic,
+    #add-topic,
+    #clear-gifs,
+    #start-over {
+        padding: 5px 5px;
+        border-radius: 8px;
+    }
+    .item {
+        width: 100vw;
+        height: 100vw;
+        max-width: 125px;
+        max-height: 125px;
+    }
 
-	.gif {
-		max-width: 100px;
-		max-height: 100px;
-	}
+    .gif {
+        max-width: 100px;
+        max-height: 100px;
+    }
 }
 
+
+/* SMALLEST SCREENS */
+
 @media screen and (max-width: 350px) {
-	button, input {
-		font-size: .5rem;
-	}
-	.topic {
-		width: 100px;
-	}
-	}
+    button,
+    input {
+        font-size: .5rem;
+    }
+    .topic {
+        width: 100px;
+    }
+}
