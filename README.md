@@ -14,6 +14,8 @@ Additional characters can be added by pushing the ADD ANOTHER CHARACTER button, 
 
 The gif area can be cleared at any point by using the CLEAR ALL GIFS button, and the user can return to the original list of 10 characters by pusing the START OVER button to reload the page.
 
+The theme music plays once after the user clicks the first character button.
+
 ## Concepts Used
 
 This gif generator uses 2 fundamental concepts with the Giphy API:
