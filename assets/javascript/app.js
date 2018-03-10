@@ -117,10 +117,10 @@
             // AJAX GET request
             $.get(queryURL).then(function(response) {
 
-                // Storing an array of 50 results in the results variable
+                // store 50 results in the results variable
                 var results = response.data;
 
-                // initialize array to hold 10 of the 50 results
+                // initialize array to hold 10 random numbers
                 var randomArray = [];
 
                 // create 10 unique random numbers between 0 and 49 and push them into the array as long as there are no repeats
