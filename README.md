@@ -1,6 +1,6 @@
 # Arrested Development Gif Generator
 
-Week 6 Assignment: Create a gif generator using API and AJAX requests
+A gif generator using API and AJAX requests
 
 ## Description
 
